@@ -39,14 +39,10 @@ namespace DnetIndexedDb
             //Check.NotNull(serviceCollection, nameof(serviceCollection));
 
             if (contextLifetime == ServiceLifetime.Singleton)
-            {
                 optionsLifetime = ServiceLifetime.Singleton;
-            }
 
             if (optionsAction != null)
-            {
                 CheckContextConstructors<TContextImplementation>();
-            }
 
             AddCoreServices<TContextImplementation>(serviceCollection, optionsAction, optionsLifetime);
 
